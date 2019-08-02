@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import { TopBar } from './components/top-bar';
 
@@ -14,6 +15,15 @@ export class RojoMail extends Component {
 
 	_handleSearchInputChange = (event) => this.setState({url: event.target.value});
 
+	_handleSearchSubmit = () => {
+		const { url } = this.state;
+		const request = `https://reddit.com/${ url }.json`;
+
+		axios.get(request)
+		.then(response => console.log(response));
+
+	}
+
 	render() {
 		const {
 			url,
@@ -22,7 +32,11 @@ export class RojoMail extends Component {
 
 		return (
 			<div className="RojoMail">
-				<TopBar searchVal={ url } onSearchChange={ this._handleSearchInputChange } />
+				<TopBar
+					searchVal={ url }
+					onSearchChange={ this._handleSearchInputChange }
+					onSearchSubmit={ this._handleSearchSubmit }
+				/>
 			</div>
 		);
 	}

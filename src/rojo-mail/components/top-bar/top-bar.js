@@ -7,6 +7,7 @@ export function TopBar(props) {
 	const {
 		searchVal,
 		onSearchChange,
+		onSearchSubmit
 	} = props;
 
 	return (
@@ -26,6 +27,7 @@ export function TopBar(props) {
 				<input
 					className="TopBar__search"
 					onChange={ onSearchChange }
+					onKeyDown={ event => handleKeyDown(event, onSearchSubmit) }
 					placeholder="Search for subreddit"
 					type="text"
 					value={ searchVal }
@@ -38,4 +40,10 @@ export function TopBar(props) {
 			</div>
 		</div>
 	);
+}
+
+function handleKeyDown(event, callback) {
+	if (event.key === 'Enter') {
+		callback();
+	}
 }
