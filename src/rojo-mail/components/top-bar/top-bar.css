@@ -1,0 +1,48 @@
+.TopBar {
+	align-items: center;
+	border-bottom: 1px solid #dbdbdb;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 10px;
+}
+
+.TopBar__headerContainer {
+	display: flex;
+	align-items: center;
+}
+
+.TopBar__header {
+	display: inline-block;
+	margin: 0 0 0 5px;
+}
+
+.TopBar__searchContainer {
+	position: relative;
+}
+
+.TopBar__searchIcon {
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+
+.TopBar__search {
+	background-color: #f0f0f0;
+	height: 50px;
+	width: 600px;
+	font-size: 17px;
+	padding-left: 40px;
+	border-radius: 15px;
+	border: 1px solid #f0f0f0;
+}
+
+.TopBar__search:focus {
+	background-color: #fff;
+	border: 1px solid #dbdbdb;
+	outline: none;
+}
+
+.TopBar__icons {
+	display: inline-block;
+}
