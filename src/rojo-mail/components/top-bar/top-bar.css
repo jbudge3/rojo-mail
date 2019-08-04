@@ -2,14 +2,20 @@
 	align-items: center;
 	border-bottom: 1px solid #dbdbdb;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 100%;
 	padding: 10px;
+}
+
+.TopBar__left {
+	display: flex;
+	align-items: center;
 }
 
 .TopBar__headerContainer {
 	display: flex;
 	align-items: center;
+	margin: 0 60px 0 20px;
 }
 
 .TopBar__header {
@@ -43,6 +49,11 @@
 	outline: none;
 }
 
-.TopBar__icons {
+.TopBar__right {
 	display: inline-block;
+	margin-right: 40px;
+}
+
+.TopBar__icon {
+	margin-left: 20px;
 }

@@ -8,32 +8,41 @@ export class RojoMail extends Component {
 		super(props);
 
 		this.state = {
-			url: '',
+			subreddit: '',
 			data: null
 		};
 	}
 
-	_handleSearchInputChange = (event) => this.setState({url: event.target.value});
+	_handleSearchInputChange = (event) => this.setState({subreddit: event.target.value});
 
 	_handleSearchSubmit = () => {
-		const { url } = this.state;
-		const request = `https://reddit.com/${ url }.json`;
+		const { subreddit } = this.state;
+		const request = `https://www.reddit.com/r/${ subreddit }.json?limit=100`;
 
 		axios.get(request)
-		.then(response => console.log(response));
+		.then((response) => {
+			const {
+				status,
+				data,
+			} = response;
+
+			if (status === 200) {
+				this.setState({data});
+			}
+		});
 
 	}
 
 	render() {
 		const {
-			url,
+			subreddit,
 			data,
 		} = this.state;
 
 		return (
 			<div className="RojoMail">
 				<TopBar
-					searchVal={ url }
+					searchVal={ subreddit }
 					onSearchChange={ this._handleSearchInputChange }
 					onSearchSubmit={ this._handleSearchSubmit }
 				/>

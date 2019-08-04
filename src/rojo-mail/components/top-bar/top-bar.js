@@ -12,31 +12,39 @@ export function TopBar(props) {
 
 	return (
 		<div className="TopBar">
-			<MaterialIcon icon="menu" />
+			<div className="TopBar__left">
+				<MaterialIcon icon="menu" />
 
-			<span className="TopBar__headerContainer">
-				<MaterialIcon icon="mail" />
-				<h3 className="TopBar__header">RojoMail</h3>
-			</span>
-
-			<div className="TopBar__searchContainer">
-				<span className="TopBar__searchIcon">
-					<MaterialIcon icon="search" />
+				<span className="TopBar__headerContainer">
+					<MaterialIcon icon="mail" />
+					<h3 className="TopBar__header">RojoMail</h3>
 				</span>
 
-				<input
-					className="TopBar__search"
-					onChange={ onSearchChange }
-					onKeyDown={ event => handleKeyDown(event, onSearchSubmit) }
-					placeholder="Search for subreddit"
-					type="text"
-					value={ searchVal }
-				/>
+				<div className="TopBar__searchContainer">
+					<span className="TopBar__searchIcon">
+						<MaterialIcon icon="search" />
+					</span>
+
+					<input
+						className="TopBar__search"
+						onChange={ onSearchChange }
+						onKeyDown={ event => handleKeyDown(event, onSearchSubmit) }
+						placeholder="Search for subreddit"
+						type="text"
+						value={ searchVal }
+					/>
+				</div>
 			</div>
 
-			<div clasname="TopBar__icons">
-				<MaterialIcon icon="help_outline" />
-				<MaterialIcon icon="apps" />
+
+			<div className="TopBar__right">
+				<span className="TopBar__icon">
+					<MaterialIcon icon="help_outline" />
+				</span>
+
+				<span className="TopBar__icon">
+					<MaterialIcon icon="apps" />
+				</span>
 			</div>
 		</div>
 	);
