@@ -30,6 +30,7 @@ export function TopBar(props) {
 						onChange={ onSearchChange }
 						onKeyDown={ event => handleKeyDown(event, onSearchSubmit) }
 						placeholder="Search for subreddit"
+						spellCheck="false"
 						type="text"
 						value={ searchVal }
 					/>

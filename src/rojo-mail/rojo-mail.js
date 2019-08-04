@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import { TopBar } from './components/top-bar';
+import { SideBar } from './components/side-bar';
 
 export class RojoMail extends Component {
 	constructor(props) {
@@ -46,6 +47,10 @@ export class RojoMail extends Component {
 					onSearchChange={ this._handleSearchInputChange }
 					onSearchSubmit={ this._handleSearchSubmit }
 				/>
+
+				<div className="RojoMail__main">
+					<SideBar />
+				</div>
 			</div>
 		);
 	}

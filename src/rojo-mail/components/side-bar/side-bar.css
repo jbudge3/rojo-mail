@@ -1,0 +1,16 @@
+.SideBar {
+	width: 220px;
+	padding-top: 10px;
+}
+
+.SideBar__compose {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #dbdbdb;
+	border-radius: 40px;
+	cursor: pointer;
+	width: 140px;
+	margin: 0 0 15px 15px;
+	box-shadow: 2px 3px 8px #dbdbdb;
+}

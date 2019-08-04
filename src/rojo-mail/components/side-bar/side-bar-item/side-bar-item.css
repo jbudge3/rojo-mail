@@ -1,0 +1,17 @@
+.SideBarItem {
+	display: flex;
+	align-items: center;
+	padding-left: 15px;
+	height: 32px;
+	cursor: pointer;
+	border-radius: 0 20px 20px 0;
+	font-size: 14px;
+}
+
+.SideBarItem:hover {
+	background-color: #dbdbdb;
+}
+
+.SideBarItem__text {
+	margin-left: 10px;
+}
