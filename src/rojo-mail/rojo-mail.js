@@ -3,6 +3,9 @@ import axios from 'axios';
 
 import { TopBar } from './components/top-bar';
 import { SideBar } from './components/side-bar';
+import { Inbox } from './components/inbox';
+
+import './rojo-mail.css';
 
 export class RojoMail extends Component {
 	constructor(props) {
@@ -28,7 +31,7 @@ export class RojoMail extends Component {
 			} = response;
 
 			if (status === 200) {
-				this.setState({data});
+				this.setState({data: data.data});
 			}
 		});
 
@@ -40,6 +43,8 @@ export class RojoMail extends Component {
 			data,
 		} = this.state;
 
+		const posts = data ? data.children : null;
+
 		return (
 			<div className="RojoMail">
 				<TopBar
@@ -50,6 +55,7 @@ export class RojoMail extends Component {
 
 				<div className="RojoMail__main">
 					<SideBar />
+					<Inbox posts={ posts } />
 				</div>
 			</div>
 		);
