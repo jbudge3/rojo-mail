@@ -9,6 +9,7 @@ import { SingleView } from './components/single-view';
 import './rojo-mail.css';
 
 const BASE_URL = 'https://www.reddit.com';
+const LIMIT = 20;
 
 export class RojoMail extends Component {
 	constructor(props) {
@@ -17,7 +18,7 @@ export class RojoMail extends Component {
 		this.state = {
 			subreddit: '',
 			posts: null,
-			view: 'list'
+			view: 'list' // list, single
 		};
 	}
 
@@ -29,7 +30,7 @@ export class RojoMail extends Component {
 
 	_handleSearchSubmit = () => {
 		const { subreddit } = this.state;
-		const request = `${ BASE_URL }/r/${ subreddit }.json?limit=100`;
+		const request = `${ BASE_URL }/r/${ subreddit }.json?limit=${ LIMIT }`;
 
 		axios
 			.get(request)
@@ -43,7 +44,7 @@ export class RojoMail extends Component {
 
 	componentWillMount = () => {
 		axios
-			.get(`${ BASE_URL }/.json`)
+			.get(`${ BASE_URL }/.json?limit=${ LIMIT }`)
 			.then((response) => {
 				this.setState({ posts: response.data.data });
 			})

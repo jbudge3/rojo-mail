@@ -15,3 +15,8 @@
 .SideBarItem__text {
 	margin-left: 10px;
 }
+
+.SideBarItem__count {
+	padding-left: 100px;
+	font-size: 12px;
+}

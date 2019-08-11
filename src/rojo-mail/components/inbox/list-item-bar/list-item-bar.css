@@ -4,4 +4,34 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
+	padding-left: 15px;
+}
+
+.ListItemBar--flexGrow {
+	flex-grow: 1;
+}
+
+.ListItemBar__leftColumn {
+	width: 9%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ListItemBar__rightColumn {
+	width: 15%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-right: 8px;
+}
+
+.ListItemBar__text {
+	align-self: center;
+	font-size: 12px;
+	position: absolute;
+	right: 250px;
+	top: 83px;
+	color: #5f6368;
 }

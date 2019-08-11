@@ -1,6 +1,7 @@
 .SideBar {
 	min-width: 220px;
 	padding-top: 10px;
+	padding-right: 25px;
 }
 
 .SideBar__compose {
@@ -13,4 +14,12 @@
 	width: 140px;
 	margin: 0 0 15px 15px;
 	box-shadow: 2px 3px 8px #dbdbdb;
+}
+
+.SideBar--selected {
+	background-color: #fce8e6;
+	border-radius: 0 20px 20px 0;
+	color: #d93025;
+	fill: #d93025;
+	font-weight: 600;
 }

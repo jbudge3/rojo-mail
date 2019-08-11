@@ -3,6 +3,8 @@ import React from 'react';
 import { InboxItem } from './inbox-item';
 import { ListItemBar } from './list-item-bar';
 
+import './inbox.css';
+
 export function Inbox(props) {
 	const { posts } = props;
 

@@ -12,7 +12,9 @@ export function SideBar() {
 				<MaterialIcon icon="add" />
 				<p>Compose</p>
 			</div>
-			<SideBarItem icon="inbox" text="Inbox" />
+			<div className="SideBar--selected">
+				<SideBarItem icon="inbox" showCount={ true } text="Inbox" />
+			</div>
 			<SideBarItem icon="star" text="Starred" />
 			<SideBarItem icon="watch_later" text="Snoozed" />
 			<SideBarItem icon="send" text="Sent" />

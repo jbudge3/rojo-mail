@@ -20,8 +20,13 @@ export function InboxItem(props) {
 			// onMouseOver={ () => setIsHovering(true) }
 			// onMouseLeave={ () => setIsHovering(false) } >
 		>
-			<MaterialIcon icon="crop_square" />
-			<MaterialIcon icon="star_border" />
+			<span className="InboxItem__square">
+				<MaterialIcon icon="crop_square" />
+			</span>
+
+			<span className="InboxItem__star">
+				<MaterialIcon icon="star_border" />
+			</span>
 			
 			<p className="InboxItem__title">
 				{ title }
