@@ -1,24 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MaterialIcon from 'material-icons-react';
 
 import './inbox-item.css';
 
 export function InboxItem(props) {
 	const {
-		title
+		title,
 	} = props;
 
+	const [hasBeenClicked, setHasBeenClicked] = useState(false);
+	const [isHovering, setIsHovering] = useState(false);
+
+	const InboxItemClass = hasBeenClicked ? 'InboxItem InboxItem--clicked' : 'InboxItem';
+
 	return (
-		<div className="InboxItem">
+		<div
+			className={ InboxItemClass }
+			onClick={ () => setHasBeenClicked(true) }
+			// onMouseOver={ () => setIsHovering(true) }
+			// onMouseLeave={ () => setIsHovering(false) } >
+		>
 			<MaterialIcon icon="crop_square" />
 			<MaterialIcon icon="star_border" />
 			
 			<p className="InboxItem__title">
 				{ title }
 			</p>
-			<p className="InboxItem__date">
-				Aug 8th
-			</p>
+
+			{ /* this is having a strange issue, but would be cool when working! */ }
+			{ isHovering ? (
+				<div className="InboxItem__hoverItems">
+					<MaterialIcon icon="star_border" />
+					<MaterialIcon icon="star_border" />
+					<MaterialIcon icon="star_border" />
+					<MaterialIcon icon="star_border" />
+				</div>
+			) : (
+				<p className="InboxItem__date">
+					Aug 8th
+				</p>
+			) } 
 		</div>
 	);
 }

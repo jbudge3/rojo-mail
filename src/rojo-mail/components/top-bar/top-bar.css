@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	padding: 10px;
+	padding: 6px 6px 6px 20px;
 }
 
 .TopBar__left {
@@ -15,7 +15,7 @@
 .TopBar__headerContainer {
 	display: flex;
 	align-items: center;
-	margin: 0 60px 0 20px;
+	margin: 0 51px 0 20px;
 }
 
 .TopBar__header {
