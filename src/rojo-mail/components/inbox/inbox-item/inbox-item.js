@@ -5,7 +5,7 @@ import './inbox-item.css';
 
 export function InboxItem(props) {
 	const {
-		title,
+		title
 	} = props;
 
 	return (
@@ -15,6 +15,9 @@ export function InboxItem(props) {
 			
 			<p className="InboxItem__title">
 				{ title }
+			</p>
+			<p className="InboxItem__date">
+				Aug 8th
 			</p>
 		</div>
 	);

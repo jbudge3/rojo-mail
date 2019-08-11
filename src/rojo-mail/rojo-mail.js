@@ -17,12 +17,12 @@ export class RojoMail extends Component {
 		this.state = {
 			subreddit: '',
 			posts: null,
-			view: 'single'
+			view: 'list'
 		};
 	}
 
 	_handleOnBackToListView = () => {
-		this.setState({ view: "list" });
+		this.setState({ view: 'list' });
 	};
 
 	_handleSearchInputChange = event => this.setState({subreddit: event.target.value});
@@ -34,7 +34,7 @@ export class RojoMail extends Component {
 		axios
 			.get(request)
 			.then((response) => {
-				this.setState({ posts: response.data.data, view: "list" });
+				this.setState({ posts: response.data.data, view: 'list' });
 			})
 			.catch((error) => {
 				console.log("er", error);
@@ -64,15 +64,16 @@ export class RojoMail extends Component {
 		return (
 			<div className="RojoMail">
 				<TopBar
-					searchVal={ subreddit }
 					onSearchChange={ this._handleSearchInputChange }
 					onSearchSubmit={ this._handleSearchSubmit }
+					searchVal={ subreddit }
 				/>
 
 				<div className="RojoMail__main">
 					<SideBar />
-					{ view === "single" && <SingleView onBack={ this._handleOnBackToListView } /> }
-					{ view === "list" && <Inbox posts={ redditPosts } /> }
+
+					{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } /> }
+					{ view === 'list' && <Inbox posts={ redditPosts } /> }
 				</div>
 			</div>
 		);
