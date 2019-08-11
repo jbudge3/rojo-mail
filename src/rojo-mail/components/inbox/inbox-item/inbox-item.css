@@ -20,6 +20,7 @@
 	text-align: right;
 	padding-right: 10px;
 	font-size: 12px;
+	min-width: 50px;
 }
 
 .InboxItem__square {
@@ -33,6 +34,10 @@
 
 .InboxItem__title {
 	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 92%;
 }
 
 .InboxItem--clicked {
