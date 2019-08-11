@@ -1,0 +1,7 @@
+
+.ListItemBar {
+	height: 47px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

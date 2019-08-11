@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { InboxItem } from './inbox-item';
+import { ListItemBar } from './list-item-bar';
 
 export function Inbox(props) {
 	const { posts } = props;
@@ -17,7 +18,9 @@ export function Inbox(props) {
 
 	return (
 		<div className="Inbox">
+			<ListItemBar />
+
 			{ postsList }
 		</div>
-	)
+	);
 }
