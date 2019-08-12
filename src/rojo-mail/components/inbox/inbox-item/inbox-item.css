@@ -1,0 +1,50 @@
+
+.InboxItem {
+	height: 39px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-top: 1px solid #dbdbdb;
+	font-weight: 600;
+	font-size: 14px;
+	padding-left: 15px;
+}
+
+.InboxItem:hover {
+	box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+	z-index: 1;
+}
+
+.InboxItem__date {
+	flex: 1;
+	text-align: right;
+	padding-right: 10px;
+	font-size: 12px;
+	min-width: 50px;
+}
+
+.InboxItem__square {
+	flex-grow: 0.02;
+	color: #CFD0D0;
+}
+
+.InboxItem__star {
+	flex-grow: 0.02;
+}
+
+.InboxItem__title {
+	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 92%;
+}
+
+.InboxItem--clicked {
+	background-color: rgba(242, 245, 245, 0.8);
+	font-weight: normal;
+}
+
+.InboxItem:last-of-type {
+	border-bottom: 1px solid #dbdbdb;
+}

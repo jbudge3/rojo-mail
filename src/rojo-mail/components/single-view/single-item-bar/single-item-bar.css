@@ -1,0 +1,14 @@
+
+.SingleItemBar {
+	justify-content: space-between;
+	height: 47px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.SingleItemBar__text {
+	color: rgb(95, 99, 104);
+	font-size: 14px;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { InboxItem } from './inbox-item';
+import { ListItemBar } from './list-item-bar';
+
+import './inbox.css';
 
 export function Inbox(props) {
 	const { posts } = props;
@@ -13,11 +16,15 @@ export function Inbox(props) {
 		);
 	}
 
-	const postsList = posts.map(post => <InboxItem key={ post.data.id } { ...post.data } />);
+	const postsList = posts.map((post) => {
+		return <InboxItem key={ post.data.id } { ...post.data } />;
+	});
 
 	return (
 		<div className="Inbox">
+			<ListItemBar />
+
 			{ postsList }
 		</div>
-	)
+	);
 }
