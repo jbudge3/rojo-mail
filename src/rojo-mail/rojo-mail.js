@@ -18,7 +18,7 @@ export class RojoMail extends Component {
 		this.state = {
 			subreddit: '',
 			posts: null,
-			view: 'list' // list, single
+			view: 'single' // list, single
 		};
 	}
 

@@ -8,7 +8,22 @@
 	border-bottom: 1px solid #dbdbdb;
 }
 
+.SingleItemBar__leftColumn {
+	width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.SingleItemBar__rightColumn {
+	width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .SingleItemBar__text {
 	color: rgb(95, 99, 104);
 	font-size: 14px;
+	padding-top: 2px;
 }
