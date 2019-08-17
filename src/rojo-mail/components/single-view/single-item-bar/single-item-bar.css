@@ -10,16 +10,16 @@
 
 .SingleItemBar__leftColumn {
 	width: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .SingleItemBar__rightColumn {
 	width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 .SingleItemBar__text {
