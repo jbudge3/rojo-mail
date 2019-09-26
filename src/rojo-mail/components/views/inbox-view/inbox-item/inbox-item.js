@@ -11,18 +11,23 @@ export function InboxItem(props) {
 	} = props;
 
 	const [hasBeenClicked, setHasBeenClicked] = useState(false);
-	const [isHovering, setIsHovering] = useState(false);
+	// const [isHovering, setIsHovering] = useState(false);
 
 	const InboxItemClass = hasBeenClicked ? 'InboxItem InboxItem--clicked' : 'InboxItem';
 
 	let createdAtDate = moment(created_at).format('MMM D');
 
+	const handleClick = () => {
+		const { onItemClick } = props;
+
+		onItemClick();
+		setHasBeenClicked(true);
+	};
+
 	return (
 		<div
 			className={ InboxItemClass }
-			onClick={ () => setHasBeenClicked(true) }
-			// onMouseOver={ () => setIsHovering(true) }
-			// onMouseLeave={ () => setIsHovering(false) } >
+			onClick={ handleClick }
 		>
 			<span className="InboxItem__square">
 				<MaterialIcon icon="crop_square" />
@@ -37,18 +42,18 @@ export function InboxItem(props) {
 			</p>
 
 			{ /* this is having a strange issue, but would be cool when working! */ }
-			{ isHovering ? (
+			{/* { isHovering ? (
 				<div className="InboxItem__hoverItems">
 					<MaterialIcon icon="star_border" />
 					<MaterialIcon icon="star_border" />
 					<MaterialIcon icon="star_border" />
 					<MaterialIcon icon="star_border" />
 				</div>
-			) : (
-				<p className="InboxItem__date">
-					{ createdAtDate }
-				</p>
-			) } 
+			) : ( */}
+			<p className="InboxItem__date">
+				{ createdAtDate }
+			</p>
+			{/* ) }  */}
 		</div>
 	);
 }

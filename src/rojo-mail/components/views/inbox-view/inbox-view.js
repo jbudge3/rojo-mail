@@ -3,25 +3,27 @@ import React from 'react';
 import { InboxItem } from './inbox-item';
 import { ListItemBar } from './list-item-bar';
 
-import './inbox.css';
+import './inbox-view.css';
 
-export function Inbox(props) {
-	const { posts } = props;
+export function InboxView(props) {
+	const { posts, onItemClick } = props;
 
 	if (!posts) {
 		return (
-			<div className="Inbox">
+			<div className="InboxView">
 				<h1>Future blank state view</h1>
 			</div>
 		);
 	}
 
+	console.log('onItemClick', onItemClick);
+
 	const postsList = posts.map((post) => {
-		return <InboxItem key={ post.data.id } { ...post.data } />;
+		return <InboxItem key={ post.data.id } { ...post.data } onItemClick={ onItemClick } />;
 	});
 
 	return (
-		<div className="Inbox">
+		<div className="InboxView">
 			<ListItemBar />
 
 			{ postsList }
