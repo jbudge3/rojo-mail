@@ -32,3 +32,10 @@
 	padding-top: 25px;
 	margin-top: 25px;
 }
+
+.SingleViewFooter > Button {
+	font-size: .875rem;
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif; 
+	text-transform: unset;
+	margin-right: 12px;
+}

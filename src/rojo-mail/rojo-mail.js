@@ -3,8 +3,8 @@ import axios from 'axios';
 
 import { TopBar } from './components/top-bar';
 import { SideBar } from './components/side-bar';
-import { Inbox } from './components/inbox';
-import { SingleView } from './components/single-view';
+import { InboxView } from './components/views/inbox-view';
+import { SingleView } from './components/views/single-view';
 
 import './rojo-mail.css';
 
@@ -24,6 +24,10 @@ export class RojoMail extends Component {
 
 	_handleOnBackToListView = () => {
 		this.setState({ view: 'list' });
+	};
+
+	_handleChangeToInboxView = () => {
+		this.setState({ view: 'single' });
 	};
 
 	_handleSearchInputChange = event => this.setState({subreddit: event.target.value});
@@ -74,7 +78,7 @@ export class RojoMail extends Component {
 					<SideBar />
 
 					{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } /> }
-					{ view === 'list' && <Inbox posts={ redditPosts } /> }
+					{ view === 'list' && <InboxView onItemClick={ this._handleChangeToInboxView } posts={ redditPosts } /> }
 				</div>
 			</div>
 		);

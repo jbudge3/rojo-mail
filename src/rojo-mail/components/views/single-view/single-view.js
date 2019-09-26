@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import MaterialIcon from 'material-icons-react';
 
 import { SingleItemBar } from '../single-view/single-item-bar';
 
@@ -24,10 +25,17 @@ export function SingleView(props) {
 				
 			<div className="SingleViewFooter">
 				<Button variant="outlined">
+					<MaterialIcon icon="reply" />
 					Reply	
+				</Button>
+				
+				<Button variant="outlined">
+					<MaterialIcon icon="reply_all" />
+					Reply All
 				</Button>
 
 				<Button variant="outlined">
+					<MaterialIcon icon="forward" />
 					Forward
 				</Button>
 			</div>
