@@ -10,17 +10,27 @@ import './single-view.css';
 
 export function SingleView(props) {
 
-	const { onBack } = props;
+	const { onBack, post } = props;
+
+	if (!post) {
+		return null;
+	}
+
+	const { data } = post;
+
+	console.log('post', post);
 
 	return (
 		<div className="SingleView">
 			<SingleItemBar onBack={ onBack } />
 
 			<div className="SingleViewContent">
-				<div className="SingleViewContent__title">Thread Title</div>
-				<div className="SingleViewContent__author">I'm the author</div>
-				<div className="SingleViewContent__content">Alll the content hereeeeeee!!!</div>
+				<div className="SingleViewContent__title">{ data.title }</div>
+				<div className="SingleViewContent__author">{ data.author }</div>
+				<div className="SingleViewContent__subreddit">{ data.subreddit_name_prefixed }</div>
+				<div className="SingleViewContent__content">{ data.selftext }</div>
 
+				<div className="SingleViewContent__content">{ data.selftext_html }</div>
 			</div>
 				
 			<div className="SingleViewFooter">

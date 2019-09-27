@@ -16,10 +16,8 @@ export function InboxView(props) {
 		);
 	}
 
-	console.log('onItemClick', onItemClick);
-
 	const postsList = posts.map((post) => {
-		return <InboxItem key={ post.data.id } { ...post.data } onItemClick={ onItemClick } />;
+		return <InboxItem key={ post.data.id } { ...post.data } onItemClick={ () => onItemClick(post) } />;
 	});
 
 	return (
