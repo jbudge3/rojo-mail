@@ -18,16 +18,23 @@ export class RojoMail extends Component {
 		this.state = {
 			subreddit: '',
 			posts: null,
-			view: 'single' // list, single
+			post: null,
+			view: 'list' // list, single
 		};
 	}
 
 	_handleOnBackToListView = () => {
-		this.setState({ view: 'list' });
+		this.setState({
+			view: 'list',
+			post: null,
+		});
 	};
 
-	_handleChangeToInboxView = () => {
-		this.setState({ view: 'single' });
+	_handleChangeToInboxView = (post) => {
+		this.setState({
+			view: 'single',
+			post
+		});
 	};
 
 	_handleSearchInputChange = event => this.setState({subreddit: event.target.value});
@@ -61,6 +68,7 @@ export class RojoMail extends Component {
 		const {
 			subreddit,
 			posts,
+			post,
 			view
 		} = this.state;
 
@@ -77,7 +85,7 @@ export class RojoMail extends Component {
 				<div className="RojoMail__main">
 					<SideBar />
 
-					{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } /> }
+					{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } post={ post } /> }
 					{ view === 'list' && <InboxView onItemClick={ this._handleChangeToInboxView } posts={ redditPosts } /> }
 				</div>
 			</div>
