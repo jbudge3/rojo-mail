@@ -17,7 +17,7 @@ export function InboxView(props) {
 	}
 
 	const postsList = posts.map((post) => {
-		return <InboxItem key={ post.data.id } { ...post.data } onItemClick={ () => onItemClick(post) } />;
+		return <InboxItem key={ post.data.id } id={ post.data.id } { ...post.data } onItemClick={ () => onItemClick(post) } />;
 	});
 
 	return (

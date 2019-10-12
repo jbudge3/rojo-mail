@@ -1,0 +1,19 @@
+
+.Attachment__pill {
+	display: flex;
+	align-items: center;
+	border: 1px solid #dbdbdb;
+	border-radius: 40px;
+	cursor: pointer;
+	width: 160px;
+	height: 28px;
+	margin: 0 0 15px 15px;
+	color: #5f6368;
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .2px;
+}
+
+.Attachment__icon {
+	padding: 10px;
+}

@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
+import { Attachment } from '../attachment';
+
 import './inbox-item.css';
 
 export function InboxItem(props) {
 	const {
 		title,
-		created_at
+		created_at,
 	} = props;
 
 	const [hasBeenClicked, setHasBeenClicked] = useState(false);
-	// const [isHovering, setIsHovering] = useState(false);
 
 	const InboxItemClass = hasBeenClicked ? 'InboxItem InboxItem--clicked' : 'InboxItem';
 
 	let createdAtDate = moment(created_at).format('MMM D');
+	const hasAttachments = false;
 
 	const handleClick = () => {
 		const { onItemClick } = props;
@@ -29,31 +31,29 @@ export function InboxItem(props) {
 			className={ InboxItemClass }
 			onClick={ handleClick }
 		>
-			<span className="InboxItem__square">
-				<MaterialIcon icon="crop_square" />
-			</span>
+			<div className="InboxItem__main">
+				<span className="InboxItem__square">
+					<MaterialIcon icon="crop_square" />
+				</span>
 
-			<span className="InboxItem__star">
-				<MaterialIcon icon="star_border" />
-			</span>
-			
-			<p className="InboxItem__title">
-				{ title }
-			</p>
+				<span className="InboxItem__star">
+					<MaterialIcon icon="star_border" />
+				</span>
+				
+				<p className="InboxItem__title">
+					{ title }
+				</p>
+				
+				<p className="InboxItem__date">
+					{ createdAtDate }
+				</p>
+			</div>
 
-			{ /* this is having a strange issue, but would be cool when working! */ }
-			{/* { isHovering ? (
-				<div className="InboxItem__hoverItems">
-					<MaterialIcon icon="star_border" />
-					<MaterialIcon icon="star_border" />
-					<MaterialIcon icon="star_border" />
-					<MaterialIcon icon="star_border" />
+			{ hasAttachments && (
+				<div className="InboxItem__attachments">
+					<Attachment />
 				</div>
-			) : ( */}
-			<p className="InboxItem__date">
-				{ createdAtDate }
-			</p>
-			{/* ) }  */}
+			) }
 		</div>
 	);
 }

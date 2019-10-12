@@ -1,9 +1,10 @@
 
 .InboxItem {
-	height: 39px;
+	/* height: 39px; */
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	/* flex-direction: row; */
+	flex-direction: column;
+	/* align-items: center; */
 	border-top: 1px solid #dbdbdb;
 	font-weight: 600;
 	font-size: 14px;
@@ -38,6 +39,17 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: 92%;
+}
+
+.InboxItem__main {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 90%;
+}
+
+.InboxItem__attachments {
+	display: flex;
 }
 
 .InboxItem--clicked {
