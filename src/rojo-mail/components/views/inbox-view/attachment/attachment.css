@@ -15,5 +15,21 @@
 }
 
 .Attachment__icon {
+	fill: #5f6368;
 	padding: 10px;
+}
+
+.Attachment__image {
+	position:relative;
+	text-decoration: none;
+}
+
+.Attachment__preview {
+	position:absolute;
+	display:none;
+	z-index:99; 
+}
+
+.Attachment__pill:hover .Attachment__preview {
+	display: block;
 }

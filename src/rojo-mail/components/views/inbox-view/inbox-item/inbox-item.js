@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
@@ -7,28 +7,41 @@ import { Attachment } from '../attachment';
 import './inbox-item.css';
 
 export function InboxItem(props) {
+	
+	const handleClick = () => {
+		const { onItemClick } = props;
+
+		onItemClick();
+	};
+
+	const renderAttachments = () => {
+		const { preview } = props;
+
+		if (!preview) {
+			return null;
+		}
+
+		return (
+			<div className="InboxItem__attachments">
+				{ preview.images.map((image) => {
+					return (
+						<Attachment key={ image.id } source={ image.source } />
+					);
+				}) }
+			</div>
+		);
+	};
+	
 	const {
 		title,
 		created_at,
 	} = props;
 
-	const [hasBeenClicked, setHasBeenClicked] = useState(false);
-
-	const InboxItemClass = hasBeenClicked ? 'InboxItem InboxItem--clicked' : 'InboxItem';
-
-	let createdAtDate = moment(created_at).format('MMM D');
-	const hasAttachments = false;
-
-	const handleClick = () => {
-		const { onItemClick } = props;
-
-		onItemClick();
-		setHasBeenClicked(true);
-	};
+	const createdAtDate = moment(created_at).format('MMM D');
 
 	return (
 		<div
-			className={ InboxItemClass }
+			className="InboxItem"
 			onClick={ handleClick }
 		>
 			<div className="InboxItem__main">
@@ -49,11 +62,7 @@ export function InboxItem(props) {
 				</p>
 			</div>
 
-			{ hasAttachments && (
-				<div className="InboxItem__attachments">
-					<Attachment />
-				</div>
-			) }
+			{ renderAttachments() }
 		</div>
 	);
 }
