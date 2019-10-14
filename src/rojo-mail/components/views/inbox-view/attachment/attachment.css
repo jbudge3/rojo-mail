@@ -1,0 +1,35 @@
+
+.Attachment__pill {
+	display: flex;
+	align-items: center;
+	border: 1px solid #dbdbdb;
+	border-radius: 40px;
+	cursor: pointer;
+	width: 160px;
+	height: 28px;
+	margin: 0 0 15px 15px;
+	color: #5f6368;
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+	font-size: .875rem;
+	letter-spacing: .2px;
+}
+
+.Attachment__icon {
+	fill: #5f6368;
+	padding: 10px;
+}
+
+.Attachment__image {
+	position:relative;
+	text-decoration: none;
+}
+
+.Attachment__preview {
+	position:absolute;
+	display:none;
+	z-index:99; 
+}
+
+.Attachment__pill:hover .Attachment__preview {
+	display: block;
+}
