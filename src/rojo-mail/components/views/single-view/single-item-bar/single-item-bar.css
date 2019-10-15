@@ -27,3 +27,7 @@
 	font-size: 14px;
 	padding-top: 2px;
 }
+
+.SingleItemBar__backButton {
+	cursor: pointer;
+}

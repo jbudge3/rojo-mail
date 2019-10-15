@@ -5,6 +5,8 @@
 	justify-content: space-between;
 	width: 100%;
 	padding: 8px 6px 8px 20px;
+	position: fixed;
+	background-color: #fff;
 }
 
 .TopBar__left {

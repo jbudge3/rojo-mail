@@ -11,7 +11,9 @@ export function SingleItemBar(props) {
 	return (
 		<div className="SingleItemBar">
 			<div className="SingleItemBar__leftColumn">
-				<MaterialIcon icon="keyboard_backspace" onClick={ onBack } />
+				<div className="SingleItemBar__backButton">
+					<MaterialIcon icon="keyboard_backspace" onClick={ onBack } />
+				</div>
 				<MaterialIcon icon="archive" />
 				<MaterialIcon icon="delete" />
 				<MaterialIcon icon="watch_later" />

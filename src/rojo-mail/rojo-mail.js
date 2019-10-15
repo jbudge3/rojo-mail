@@ -85,8 +85,10 @@ export class RojoMail extends Component {
 				<div className="RojoMail__main">
 					<SideBar />
 
-					{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } post={ post } /> }
-					{ view === 'list' && <InboxView onItemClick={ this._handleChangeToInboxView } posts={ redditPosts } /> }
+					<div className="RojoMail__content">
+						{ view === 'single' && <SingleView onBack={ this._handleOnBackToListView } post={ post } /> }
+						{ view === 'list' && <InboxView onItemClick={ this._handleChangeToInboxView } posts={ redditPosts } /> }
+					</div>
 				</div>
 			</div>
 		);
