@@ -28,6 +28,9 @@
 	position:absolute;
 	display:none;
 	z-index:99; 
+	padding: 25px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .Attachment__pill:hover .Attachment__preview {
