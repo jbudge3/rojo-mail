@@ -1,11 +1,20 @@
 
 .SingleView {
-	width: 75%;
+	width: 83%;
 }
 
 .SingleViewContent {
 	padding-top: 20px;
-	padding-left: 50px;
+	width: 93%;
+}
+
+.SingleViewContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.SingleViewColumn {
+	padding: 23px 25px 25px 25px;
 }
 
 .SingleViewContent__Row {
@@ -37,10 +46,36 @@
 	font-weight: 600;
 }
 
+.SingleViewContent__subreddit {
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+ 	font-size: .70rem;
+	letter-spacing: .3px;
+	color: #555;
+	padding-left: 5px;
+}
+
+.SingleViewContent__toMe {
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+	font-size: .70rem;
+	letter-spacing: .3px;
+	color: #5f6368;
+	line-height: 20px;
+}
+
 .SingleViewContent__content {
 	margin-top: 15px;
 	font-size: 13px;
 	color: rgb(34, 34, 34);
+}
+
+.SingleViewComments {
+	padding-left: 30px;
+}
+
+.SingleViewCommment {
+	border-top: 1px solid #dbdbdb;
+	margin-top: 25px;
+	padding: 25px 25px 0 85px;
 }
 
 .SingleViewFooter {
