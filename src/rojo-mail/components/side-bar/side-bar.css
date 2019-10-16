@@ -2,6 +2,8 @@
 	min-width: 220px;
 	padding-top: 10px;
 	padding-right: 25px;
+	position: fixed;
+	margin-top: 71px;
 }
 
 .SideBar__compose {

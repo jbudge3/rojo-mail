@@ -1,6 +1,6 @@
 
 .SingleView {
-	width: 83%;
+	width: 100%;
 }
 
 .SingleViewContent {
@@ -86,7 +86,7 @@
 
 .SingleViewFooter > Button {
 	font-size: .875rem;
-	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif; 
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 	text-transform: unset;
 	margin-right: 12px;
 }

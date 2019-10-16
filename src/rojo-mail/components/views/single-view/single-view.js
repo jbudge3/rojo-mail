@@ -14,7 +14,7 @@ import './single-view.css';
 export function SingleView(props) {
 
 	const [comments, setComments] = useState([]);
-	
+
 	useEffect(() => {
 		getComments();
 	}, []);
@@ -62,7 +62,7 @@ export function SingleView(props) {
 				</div>
 			);
 		});
-			
+
 		return (
 			<div className="SingleViewCommments">
 				{ commentList }
@@ -93,7 +93,7 @@ export function SingleView(props) {
 
 				<div className="SingleViewContent">
 					<div className="SingleViewContent__title">{ data.title }</div>
-					
+
 					<div className="SingleViewContent__Row">
 						<div className="SingleViewContent__author">
 							{ data.author }
@@ -108,19 +108,19 @@ export function SingleView(props) {
 
 					<div className="SingleViewContent__content">comments { data.num_comments }</div>
 					<div className="SingleViewContent__content">upvotes { data.score }</div>
-					<div className="SingleViewContent__content"><a href={ data.url } target="_blank">perma link</a></div>
+					<div className="SingleViewContent__content"><a href={ data.url } target="_blank" rel="noopener noreferrer">perma link</a></div>
 				</div>
 			</div>
 
 			{/* Turn this into its own component? */}
 			{ renderComments() }
-			
+
 			<div className="SingleViewFooter">
 				<Button variant="outlined">
 					<MaterialIcon icon="reply" />
-					Reply	
+					Reply
 				</Button>
-				
+
 				<Button variant="outlined">
 					<MaterialIcon icon="reply_all" />
 					Reply All
