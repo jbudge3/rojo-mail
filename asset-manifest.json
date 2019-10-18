@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/rojo-mail/static/css/main.ad765bf8.chunk.css",
+    "main.js": "/rojo-mail/static/js/main.bee67b24.chunk.js",
+    "main.js.map": "/rojo-mail/static/js/main.bee67b24.chunk.js.map",
+    "runtime~main.js": "/rojo-mail/static/js/runtime~main.d7cf6767.js",
+    "runtime~main.js.map": "/rojo-mail/static/js/runtime~main.d7cf6767.js.map",
+    "static/css/2.1f156bdb.chunk.css": "/rojo-mail/static/css/2.1f156bdb.chunk.css",
+    "static/js/2.01b14e99.chunk.js": "/rojo-mail/static/js/2.01b14e99.chunk.js",
+    "static/js/2.01b14e99.chunk.js.map": "/rojo-mail/static/js/2.01b14e99.chunk.js.map",
+    "index.html": "/rojo-mail/index.html",
+    "precache-manifest.f1eed0f97c6446ce2cbd2133e6a6a4e6.js": "/rojo-mail/precache-manifest.f1eed0f97c6446ce2cbd2133e6a6a4e6.js",
+    "service-worker.js": "/rojo-mail/service-worker.js",
+    "static/css/2.1f156bdb.chunk.css.map": "/rojo-mail/static/css/2.1f156bdb.chunk.css.map",
+    "static/css/main.ad765bf8.chunk.css.map": "/rojo-mail/static/css/main.ad765bf8.chunk.css.map"
+  }
+}
