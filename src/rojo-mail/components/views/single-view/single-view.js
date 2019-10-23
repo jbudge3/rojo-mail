@@ -47,7 +47,7 @@ export function SingleView(props) {
 			const { data } = comment;
 
 			return (
-				<div className="SingleViewCommment" key={ comment.id }>
+				<div className="SingleViewCommment" key={ data.id }>
 					<div className="SingleViewContent__Row">
 						<div className="SingleViewContent__author">
 							{ data.author }
