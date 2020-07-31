@@ -6,8 +6,7 @@ import { Attachment } from '../attachment';
 
 import './inbox-item.css';
 
-export function InboxItem(props) {
-	
+export function InboxItem (props) {
 	const handleClick = () => {
 		const { onItemClick } = props;
 
@@ -22,47 +21,35 @@ export function InboxItem(props) {
 		}
 
 		return (
-			<div className="InboxItem__attachments">
-				{ preview.images.map((image) => {
-					return (
-						<Attachment key={ image.id } source={ image.source } />
-					);
-				}) }
+			<div className='InboxItem__attachments'>
+				{preview.images.map(image => {
+					return <Attachment key={image.id} source={image.source} />;
+				})}
 			</div>
 		);
 	};
-	
-	const {
-		title,
-		created_at,
-	} = props;
+
+	const { title, created_at } = props;
 
 	const createdAtDate = moment(created_at).format('MMM D');
 
 	return (
-		<div
-			className="InboxItem"
-			onClick={ handleClick }
-		>
-			<div className="InboxItem__main">
-				<span className="InboxItem__square">
-					<MaterialIcon icon="crop_square" />
+		<div className='InboxItem' onClick={handleClick}>
+			<div className='InboxItem__main'>
+				<span className='InboxItem__square'>
+					<MaterialIcon icon='crop_square' />
 				</span>
 
-				<span className="InboxItem__star">
-					<MaterialIcon icon="star_border" />
+				<span className='InboxItem__star'>
+					<MaterialIcon icon='star_border' />
 				</span>
-				
-				<p className="InboxItem__title">
-					{ title }
-				</p>
-				
-				<p className="InboxItem__date">
-					{ createdAtDate }
-				</p>
+
+				<p className='InboxItem__title'>{title}</p>
+
+				<p className='InboxItem__date'>{createdAtDate}</p>
 			</div>
 
-			{ renderAttachments() }
+			{renderAttachments()}
 		</div>
 	);
 }

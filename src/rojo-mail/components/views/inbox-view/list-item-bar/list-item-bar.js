@@ -4,25 +4,25 @@ import MaterialIcon from 'material-icons-react';
 
 import './list-item-bar.css';
 
-export function ListItemBar(props) {
+export function ListItemBar (props) {
 	return (
-		<div className="ListItemBar">
-			<div className="ListItemBar__leftColumn">
-				<MaterialIcon icon="crop_square" />
-				<span className="ListItemBar--flexGrow">
-					<MaterialIcon icon="arrow_drop_down" />
+		<div className='ListItemBar'>
+			<div className='ListItemBar__leftColumn'>
+				<MaterialIcon icon='crop_square' />
+				<span className='ListItemBar--flexGrow'>
+					<MaterialIcon icon='arrow_drop_down' />
 				</span>
-				<MaterialIcon icon="refresh" />
-				<MaterialIcon icon="more_vert" />
+				<MaterialIcon icon='refresh' />
+				<MaterialIcon icon='more_vert' />
 			</div>
 
-			<div className="ListItemBar__rightColumn">
-				<span className="ListItemBar__text">1-50 of 1337</span>
-				<MaterialIcon icon="keyboard_arrow_left" />
-				<MaterialIcon icon="keyboard_arrow_right" />
-				<MaterialIcon icon="keyboard" />
-				<MaterialIcon icon="arrow_drop_down" />
-				<MaterialIcon icon="settings" />
+			<div className='ListItemBar__rightColumn'>
+				<span className='ListItemBar__text'>1-50 of 1337</span>
+				<MaterialIcon icon='keyboard_arrow_left' />
+				<MaterialIcon icon='keyboard_arrow_right' />
+				<MaterialIcon icon='keyboard' />
+				<MaterialIcon icon='arrow_drop_down' />
+				<MaterialIcon icon='settings' />
 			</div>
 		</div>
 	);
