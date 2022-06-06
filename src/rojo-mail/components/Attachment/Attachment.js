@@ -1,7 +1,7 @@
 import React from 'react';
-import MaterialIcon from 'material-icons-react';
+import MaterialIcon, { colorPalette } from 'material-icons-react';
 
-import './attachment.css';
+import './Attachment.css';
 
 export function Attachment (props) {
 	const { source } = props;
@@ -12,7 +12,10 @@ export function Attachment (props) {
 	return (
 		<div className='Attachment__pill'>
 			<span className='Attachment__icon'>
-				<MaterialIcon icon='attachment' />
+				<MaterialIcon
+					icon='picture_as_pdf'
+					color={colorPalette.red._600}
+				/>
 			</span>
 			<p className='Attachment__fileName'>File name here..</p>
 

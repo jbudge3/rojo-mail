@@ -2,7 +2,7 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import './single-item-bar.css';
+import './SingleItemBar.css';
 
 export function SingleItemBar (props) {
 	const { onBack } = props;
