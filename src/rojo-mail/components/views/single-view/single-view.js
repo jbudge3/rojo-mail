@@ -68,8 +68,6 @@ export function SingleView (props) {
 	const { onBack, post } = props;
 	const { data } = post;
 
-	console.log('data', data);
-
 	if (!post) {
 		return null;
 	}

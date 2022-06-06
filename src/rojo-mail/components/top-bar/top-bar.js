@@ -6,7 +6,11 @@ import './top-bar.css';
 export function TopBar (props) {
 	const { searchVal, onSearchChange, onSearchSubmit } = props;
 
-	console.log('props', props);
+	const handleKeyDown = (event, callback) => {
+		if (event.key === 'Enter') {
+			callback();
+		}
+	};
 
 	return (
 		<div className='TopBar'>
@@ -48,10 +52,4 @@ export function TopBar (props) {
 			</div>
 		</div>
 	);
-}
-
-function handleKeyDown (event, callback) {
-	if (event.key === 'Enter') {
-		callback();
-	}
 }
