@@ -3,6 +3,14 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 import './Attachment.css';
 
+const FILE_NAMES = [
+	'Invoice-E653416',
+	'Receipt-3210-0',
+	'Performance',
+	'IMG-34493',
+	'Slides PPT'
+];
+
 export function Attachment (props) {
 	const { source } = props;
 
@@ -17,7 +25,9 @@ export function Attachment (props) {
 					color={colorPalette.red._600}
 				/>
 			</span>
-			<p className='Attachment__fileName'>File name here..</p>
+			<p className='Attachment__fileName'>
+				{FILE_NAMES[Math.floor(Math.random() * FILE_NAMES.length)]}
+			</p>
 
 			<div className='Attachment__image'>
 				<span className='Attachment__preview'>

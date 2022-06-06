@@ -23,6 +23,7 @@ export function InboxItem (props) {
 		return (
 			<div className='InboxItem__attachments'>
 				{preview.images.map(image => {
+					console.log('image', image);
 					return <Attachment key={image.id} source={image.source} />;
 				})}
 			</div>

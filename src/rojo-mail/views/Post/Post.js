@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import MaterialIcon from 'material-icons-react';
@@ -7,9 +6,11 @@ import moment from 'moment';
 
 import { SingleItemBar } from '../../components/SingleItemBar';
 
-import './single-view.css';
+import { fetchData } from '../../utils/http';
 
-export function SingleView (props) {
+import './Post.css';
+
+export function Post (props) {
 	const [comments, setComments] = useState([]);
 
 	useEffect(() => {
@@ -25,14 +26,9 @@ export function SingleView (props) {
 
 		const commentsUrl = `${post.data.url}.json`;
 
-		axios
-			.get(commentsUrl)
-			.then(response => {
-				setComments(response.data[1].data.children);
-			})
-			.catch(error => {
-				console.log('er', error);
-			});
+		fetchData(commentsUrl).then(comments => {
+			setComments(comments[1].data.children);
+		});
 	};
 
 	const renderComments = () => {
