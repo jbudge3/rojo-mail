@@ -6,6 +6,8 @@ import './top-bar.css';
 export function TopBar (props) {
 	const { searchVal, onSearchChange, onSearchSubmit } = props;
 
+	console.log('props', props);
+
 	return (
 		<div className='TopBar'>
 			<div className='TopBar__left'>

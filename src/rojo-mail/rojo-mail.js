@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { TopBar } from './components/top-bar';
@@ -11,92 +11,77 @@ import './rojo-mail.css';
 const BASE_URL = 'https://www.reddit.com';
 const LIMIT = 20;
 
-export class RojoMail extends Component {
-	constructor (props) {
-		super(props);
+export const RojoMail = () => {
+	const [subReddit, setSubReddit] = useState('');
+	const [post, setPost] = useState({});
+	const [posts, setPosts] = useState([]);
+	const [view, setView] = useState('list'); // list, single
 
-		this.state = {
-			subreddit: '',
-			posts: null,
-			post: null,
-			view: 'list' // list, single
-		};
-	}
+	useEffect(() => {
+		axios
+			.get(`${BASE_URL}/.json?limit=${LIMIT}`)
+			.then(response => {
+				setPosts(response.data.data);
+			})
+			.catch(error => {
+				console.log('er', error);
+			});
+	}, []);
 
-	_handleOnBackToListView = () => {
-		this.setState({
-			view: 'list',
-			post: null
-		});
+	const _handleOnBackToListView = () => {
+		setView('list');
+		setPost({});
 	};
 
-	_handleChangeToInboxView = post => {
-		this.setState({
-			view: 'single',
-			post
-		});
+	const _handleChangeToInboxView = post => {
+		setView('single');
+		setPost(post);
 	};
 
-	_handleSearchInputChange = event =>
-		this.setState({ subreddit: event.target.value });
+	const _handleSearchInputChange = event => setSubReddit(event.target.value);
 
-	_handleSearchSubmit = () => {
-		const { subreddit } = this.state;
-		const request = `${BASE_URL}/r/${subreddit}.json?limit=${LIMIT}`;
+	const _handleSearchSubmit = () => {
+		const request = `${BASE_URL}/r/${subReddit}.json?limit=${LIMIT}`;
 
 		axios
 			.get(request)
 			.then(response => {
-				this.setState({ posts: response.data.data, view: 'list' });
+				setView('list');
+				setPosts(response.data.data);
 			})
 			.catch(error => {
 				console.log('er', error);
 			});
 	};
 
-	componentWillMount = () => {
-		axios
-			.get(`${BASE_URL}/.json?limit=${LIMIT}`)
-			.then(response => {
-				this.setState({ posts: response.data.data });
-			})
-			.catch(error => {
-				console.log('er', error);
-			});
-	};
+	const redditPosts = posts ? posts.children : null;
 
-	render () {
-		const { subreddit, posts, post, view } = this.state;
+	return (
+		<div className='RojoMail'>
+			<TopBar
+				onSearchChange={_handleSearchInputChange}
+				onSearchSubmit={_handleSearchSubmit}
+				searchVal={subReddit}
+			/>
 
-		const redditPosts = posts ? posts.children : null;
+			<div className='RojoMail__main'>
+				<SideBar />
 
-		return (
-			<div className='RojoMail'>
-				<TopBar
-					onSearchChange={this._handleSearchInputChange}
-					onSearchSubmit={this._handleSearchSubmit}
-					searchVal={subreddit}
-				/>
-
-				<div className='RojoMail__main'>
-					<SideBar />
-
-					<div className='RojoMail__content'>
-						{view === 'single' && (
-							<SingleView
-								onBack={this._handleOnBackToListView}
-								post={post}
-							/>
-						)}
-						{view === 'list' && (
-							<InboxView
-								onItemClick={this._handleChangeToInboxView}
-								posts={redditPosts}
-							/>
-						)}
-					</div>
+				<div className='RojoMail__content'>
+					{view === 'single' && (
+						<SingleView
+							onBack={_handleOnBackToListView}
+							post={post}
+						/>
+					)}
+					{view === 'list' && (
+						<InboxView
+							onItemClick={_handleChangeToInboxView}
+							posts={redditPosts}
+						/>
+					)}
 				</div>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
