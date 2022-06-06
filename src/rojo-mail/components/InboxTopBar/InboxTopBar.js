@@ -2,9 +2,9 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import './InboxBackBar.css';
+import './InboxTopBar.css';
 
-export function InboxBackBar (props) {
+export function InboxTopBar (props) {
 	return (
 		<div className='ListItemBar'>
 			<div className='ListItemBar__leftColumn'>

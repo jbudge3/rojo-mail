@@ -1,11 +1,12 @@
 import React, { Component, useEffect, useState } from 'react';
-import axios from 'axios';
 
-import { InboxView } from './views/inbox-view';
-import { SingleView } from './views/single-view';
+import { Inbox } from './views/Inbox';
+import { Post } from './views/Post';
 
 import { TopBar } from './components/TopBar';
 import { SideBar } from './components/SideBar';
+
+import { fetchData } from './utils/http';
 
 import './RojoMail.css';
 
@@ -19,14 +20,11 @@ export const RojoMail = () => {
 	const [view, setView] = useState('list'); // list, single
 
 	useEffect(() => {
-		axios
-			.get(`${BASE_URL}/.json?limit=${LIMIT}`)
-			.then(response => {
-				setPosts(response.data.data);
-			})
-			.catch(error => {
-				console.log('er', error);
-			});
+		const postsUrl = `${BASE_URL}/.json?limit=${LIMIT}`;
+
+		fetchData(postsUrl).then(posts => {
+			setPosts(posts.data);
+		});
 	}, []);
 
 	const _handleOnBackToListView = () => {
@@ -42,17 +40,12 @@ export const RojoMail = () => {
 	const _handleSearchInputChange = event => setSubReddit(event.target.value);
 
 	const _handleSearchSubmit = () => {
-		const request = `${BASE_URL}/r/${subReddit}.json?limit=${LIMIT}`;
+		const subRedditUrl = `${BASE_URL}/r/${subReddit}.json?limit=${LIMIT}`;
 
-		axios
-			.get(request)
-			.then(response => {
-				setView('list');
-				setPosts(response.data.data);
-			})
-			.catch(error => {
-				console.log('er', error);
-			});
+		fetchData(subRedditUrl).then(posts => {
+			setView('list');
+			setPosts(posts.data);
+		});
 	};
 
 	const redditPosts = posts ? posts.children : null;
@@ -70,13 +63,10 @@ export const RojoMail = () => {
 
 				<div className='RojoMail__content'>
 					{view === 'single' && (
-						<SingleView
-							onBack={_handleOnBackToListView}
-							post={post}
-						/>
+						<Post onBack={_handleOnBackToListView} post={post} />
 					)}
 					{view === 'list' && (
-						<InboxView
+						<Inbox
 							onItemClick={_handleChangeToInboxView}
 							posts={redditPosts}
 						/>

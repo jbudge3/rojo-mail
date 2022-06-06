@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { InboxItem } from '../../components/InboxItem';
-import { InboxBackBar } from '../../components/InboxBackBar';
+import { InboxTopBar } from '../../components/InboxTopBar';
 
-import './inbox-view.css';
+import './Inbox.css';
 
-export function InboxView (props) {
+export function Inbox (props) {
 	const { posts, onItemClick } = props;
 
 	if (!posts) {
@@ -18,6 +18,7 @@ export function InboxView (props) {
 
 	const getPosts = () => {
 		return posts.map(post => {
+			console.log('post', post);
 			return (
 				<InboxItem
 					key={post.data.id}
@@ -30,7 +31,7 @@ export function InboxView (props) {
 
 	return (
 		<div className='InboxView'>
-			<InboxBackBar />
+			<InboxTopBar />
 
 			{getPosts()}
 		</div>

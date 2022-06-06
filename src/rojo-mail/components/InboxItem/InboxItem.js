@@ -29,9 +29,16 @@ export function InboxItem (props) {
 		);
 	};
 
-	const { title, created_at } = props;
+	const { title, created } = props;
 
-	const createdAtDate = moment(created_at).format('MMM D');
+	let dateString;
+
+	const isCurrentDate = moment(created).isSame(new Date(), 'day');
+	if (isCurrentDate) {
+		dateString = moment(created).format('hh:mm a');
+	} else {
+		dateString = moment(created).format('MMM D');
+	}
 
 	return (
 		<div className='InboxItem' onClick={handleClick}>
@@ -46,7 +53,7 @@ export function InboxItem (props) {
 
 				<p className='InboxItem__title'>{title}</p>
 
-				<p className='InboxItem__date'>{createdAtDate}</p>
+				<p className='InboxItem__date'>{dateString}</p>
 			</div>
 
 			{renderAttachments()}

@@ -9,7 +9,7 @@
 
 .InboxItem:hover {
 	box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-		0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+		0 1px 2px 0 rgba(60, 64, 67, 0.5), 0 1px 3px 1px rgba(60, 64, 67, 0.35);
 	z-index: 1;
 }
 
@@ -22,12 +22,12 @@
 }
 
 .InboxItem__square {
-	margin-right: 5px;
+	margin-right: 8px;
 	color: #cfd0d0;
 }
 
 .InboxItem__star {
-	margin-right: 5px;
+	margin-right: 8px;
 }
 
 .InboxItem__title {
