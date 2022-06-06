@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { InboxItem } from './inbox-item';
-import { ListItemBar } from './list-item-bar';
+import { InboxItem } from '../../components/InboxItem';
+import { InboxBackBar } from '../../components/InboxBackBar';
 
 import './inbox-view.css';
 
@@ -30,7 +30,7 @@ export function InboxView (props) {
 
 	return (
 		<div className='InboxView'>
-			<ListItemBar />
+			<InboxBackBar />
 
 			{getPosts()}
 		</div>

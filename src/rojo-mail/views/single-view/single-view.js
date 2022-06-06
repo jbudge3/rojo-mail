@@ -5,7 +5,7 @@ import MaterialIcon from 'material-icons-react';
 
 import moment from 'moment';
 
-import { SingleItemBar } from '../single-view/single-item-bar';
+import { SingleItemBar } from '../../components/SingleItemBar';
 
 import './single-view.css';
 

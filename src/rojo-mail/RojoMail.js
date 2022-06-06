@@ -1,12 +1,13 @@
 import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
 
+import { InboxView } from './views/inbox-view';
+import { SingleView } from './views/single-view';
+
 import { TopBar } from './components/TopBar';
 import { SideBar } from './components/SideBar';
-import { InboxView } from './components/views/inbox-view';
-import { SingleView } from './components/views/single-view';
 
-import './rojo-mail.css';
+import './RojoMail.css';
 
 const BASE_URL = 'https://www.reddit.com';
 const LIMIT = 20;

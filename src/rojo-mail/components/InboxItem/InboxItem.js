@@ -2,9 +2,9 @@ import React from 'react';
 import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
-import { Attachment } from '../../../Attachment';
+import { Attachment } from '../Attachment';
 
-import './inbox-item.css';
+import './InboxItem.css';
 
 export function InboxItem (props) {
 	const handleClick = () => {
