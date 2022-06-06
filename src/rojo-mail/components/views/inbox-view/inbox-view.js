@@ -16,21 +16,23 @@ export function InboxView (props) {
 		);
 	}
 
-	const postsList = posts.map(post => {
-		return (
-			<InboxItem
-				key={post.data.id}
-				{...post.data}
-				onItemClick={() => onItemClick(post)}
-			/>
-		);
-	});
+	const getPosts = () => {
+		return posts.map(post => {
+			return (
+				<InboxItem
+					key={post.data.id}
+					{...post.data}
+					onItemClick={() => onItemClick(post)}
+				/>
+			);
+		});
+	};
 
 	return (
 		<div className='InboxView'>
 			<ListItemBar />
 
-			{postsList}
+			{getPosts()}
 		</div>
 	);
 }

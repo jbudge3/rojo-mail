@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialIcon from 'material-icons-react';
 
-import './side-bar-item.css';
+import './SideBarItem.css';
 
 export function SideBarItem (props) {
 	const { icon, text, showCount } = props;

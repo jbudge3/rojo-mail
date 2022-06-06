@@ -2,7 +2,7 @@ import React from 'react';
 import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
-import { Attachment } from '../attachment';
+import { Attachment } from '../../../Attachment';
 
 import './inbox-item.css';
 

@@ -1,8 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { TopBar } from './components/top-bar';
-import { SideBar } from './components/side-bar';
+import { TopBar } from './components/TopBar';
+import { SideBar } from './components/SideBar';
 import { InboxView } from './components/views/inbox-view';
 import { SingleView } from './components/views/single-view';
 

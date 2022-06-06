@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialIcon from 'material-icons-react';
 
-import './top-bar.css';
+import './TopBar.css';
 
 export function TopBar (props) {
 	const { searchVal, onSearchChange, onSearchSubmit } = props;
@@ -33,7 +33,7 @@ export function TopBar (props) {
 						onKeyDown={event =>
 							handleKeyDown(event, onSearchSubmit)
 						}
-						placeholder='Search for subreddit'
+						placeholder='Search subreddit'
 						spellCheck='false'
 						type='text'
 						value={searchVal}

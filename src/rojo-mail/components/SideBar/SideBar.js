@@ -1,9 +1,9 @@
 import React from 'react';
 import MaterialIcon from 'material-icons-react';
 
-import { SideBarItem } from './side-bar-item';
+import { SideBarItem } from '../SideBarItem';
 
-import './side-bar.css';
+import './SideBar.css';
 
 export function SideBar () {
 	return (
