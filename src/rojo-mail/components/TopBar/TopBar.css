@@ -37,11 +37,11 @@
 
 .TopBar__search {
 	background-color: #f1f3f4;
-	height: 50px;
+	height: 46px;
 	width: 600px;
 	font-size: 17px;
 	padding-left: 40px;
-	border-radius: 15px;
+	border-radius: 8px;
 	border: 1px solid #f0f0f0;
 }
 
@@ -49,6 +49,12 @@
 	background-color: #fff;
 	border: 1px solid #dbdbdb;
 	outline: none;
+	box-shadow: 2px 2px 2px #f0f0f0;
+}
+
+.TopBar__search::placeholder {
+	color: #929494;
+	font-size: 15px;
 }
 
 .TopBar__right {

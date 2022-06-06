@@ -18,6 +18,7 @@ export function Inbox (props) {
 
 	const getPosts = () => {
 		return posts.map(post => {
+			console.log('post', post);
 			return (
 				<InboxItem
 					key={post.data.id}

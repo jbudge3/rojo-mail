@@ -1,7 +1,7 @@
 .SideBarItem {
 	display: flex;
 	align-items: center;
-	padding-left: 15px;
+	padding-left: 28px;
 	height: 32px;
 	cursor: pointer;
 	border-radius: 0 20px 20px 0;
@@ -13,10 +13,10 @@
 }
 
 .SideBarItem__text {
-	margin-left: 10px;
+	margin-left: 14px;
 }
 
 .SideBarItem__count {
-	padding-left: 100px;
+	padding-left: 96px;
 	font-size: 12px;
 }
