@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
 import { Attachment } from '../Attachment';
 
+import { DUMMY_EMAILS } from '../../utils/consts';
+
 import './InboxItem.css';
 
 export function InboxItem (props) {
+	const selectedEmail =
+		DUMMY_EMAILS[Math.floor(Math.random() * DUMMY_EMAILS.length)];
+
+	const [text, setText] = useState('');
+	const [originalText, setOriginalText] = useState(props.title);
+	const [dummyText, setDummyText] = useState(selectedEmail);
+	const [isHovering, setIsHovering] = useState(false);
+
+	useEffect(() => {
+		if (isHovering) {
+			setText(originalText);
+		} else {
+			setText(dummyText);
+		}
+	}, [isHovering]);
+
 	const handleClick = () => {
 		const { onItemClick } = props;
 
@@ -29,7 +47,7 @@ export function InboxItem (props) {
 		);
 	};
 
-	const { title, created, alreadySeen } = props;
+	const { created, alreadySeen } = props;
 
 	let dateString;
 
@@ -43,7 +61,12 @@ export function InboxItem (props) {
 	const itemClass = alreadySeen ? 'InboxItem InboxItem--seen' : 'InboxItem';
 
 	return (
-		<div className={itemClass} onClick={handleClick}>
+		<div
+			className={itemClass}
+			onClick={handleClick}
+			onMouseEnter={() => setIsHovering(true)}
+			onMouseLeave={() => setIsHovering(false)}
+		>
 			<div className='InboxItem__main'>
 				<span className='InboxItem__square'>
 					<MaterialIcon icon='crop_square' />
@@ -53,7 +76,7 @@ export function InboxItem (props) {
 					<MaterialIcon icon='star_border' />
 				</span>
 
-				<p className='InboxItem__title'>{title}</p>
+				<p className='InboxItem__title'>{text}</p>
 
 				<p className='InboxItem__date'>{dateString}</p>
 			</div>
