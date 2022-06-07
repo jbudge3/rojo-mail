@@ -29,7 +29,7 @@ export function InboxItem (props) {
 		);
 	};
 
-	const { title, created } = props;
+	const { title, created, alreadySeen } = props;
 
 	let dateString;
 
@@ -40,8 +40,10 @@ export function InboxItem (props) {
 		dateString = moment(created).format('MMM D');
 	}
 
+	const itemClass = alreadySeen ? 'InboxItem InboxItem--seen' : 'InboxItem';
+
 	return (
-		<div className='InboxItem' onClick={handleClick}>
+		<div className={itemClass} onClick={handleClick}>
 			<div className='InboxItem__main'>
 				<span className='InboxItem__square'>
 					<MaterialIcon icon='crop_square' />
