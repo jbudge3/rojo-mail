@@ -18,8 +18,6 @@ export function Inbox (props) {
 
 	const getPosts = () => {
 		return posts.map(post => {
-			console.log('post', post);
-
 			const hasAlreadySeenThisPost = seenPosts.includes(post.data.id);
 
 			return (
