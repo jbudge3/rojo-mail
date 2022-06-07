@@ -18,6 +18,7 @@ export const RojoMail = () => {
 	const [post, setPost] = useState({});
 	const [posts, setPosts] = useState([]);
 	const [view, setView] = useState('list'); // list, single
+	const [seenPosts, setSeenPosts] = useState([]);
 
 	useEffect(() => {
 		const postsUrl = `${BASE_URL}/.json?limit=${LIMIT}`;
@@ -35,6 +36,7 @@ export const RojoMail = () => {
 	const _handleChangeToInboxView = post => {
 		setView('single');
 		setPost(post);
+		setSeenPosts(seenPosts => [...seenPosts, post.data.id]);
 	};
 
 	const _handleSearchInputChange = event => setSubReddit(event.target.value);
@@ -69,6 +71,7 @@ export const RojoMail = () => {
 						<Inbox
 							onItemClick={_handleChangeToInboxView}
 							posts={redditPosts}
+							seenPosts={seenPosts}
 						/>
 					)}
 				</div>

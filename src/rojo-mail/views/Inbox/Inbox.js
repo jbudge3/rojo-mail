@@ -6,7 +6,7 @@ import { InboxTopBar } from '../../components/InboxTopBar';
 import './Inbox.css';
 
 export function Inbox (props) {
-	const { posts, onItemClick } = props;
+	const { posts, seenPosts, onItemClick } = props;
 
 	if (!posts) {
 		return (
@@ -19,9 +19,13 @@ export function Inbox (props) {
 	const getPosts = () => {
 		return posts.map(post => {
 			console.log('post', post);
+
+			const hasAlreadySeenThisPost = seenPosts.includes(post.data.id);
+
 			return (
 				<InboxItem
 					key={post.data.id}
+					alreadySeen={hasAlreadySeenThisPost}
 					{...post.data}
 					onItemClick={() => onItemClick(post)}
 				/>
