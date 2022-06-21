@@ -5,62 +5,13 @@ import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
 import { SingleItemBar } from '../../components/SingleItemBar';
+import { PostComments } from '../../components/PostComments';
 
 import { fetchData } from '../../utils/http';
 
 import './Post.css';
 
 export function Post (props) {
-	const [comments, setComments] = useState([]);
-
-	useEffect(() => {
-		getComments();
-	}, []);
-
-	const getComments = () => {
-		const { post } = props;
-
-		if (!post) {
-			return;
-		}
-
-		const commentsUrl = `${post.data.url}.json`;
-
-		fetchData(commentsUrl).then(comments => {
-			setComments(comments[1].data.children);
-		});
-	};
-
-	const renderComments = () => {
-		if (!comments || comments.length === 0) {
-			return;
-		}
-
-		const commentList = comments.map(comment => {
-			const { data } = comment;
-
-			return (
-				<div className='SingleViewCommment' key={data.id}>
-					<div className='SingleViewContent__Row'>
-						<div className='SingleViewContent__author'>
-							{data.author}
-							<span className='SingleViewContent__subreddit'>
-								{subredditString}
-							</span>
-							<div className='SingleViewContent__toMe'>to me</div>
-						</div>
-					</div>
-
-					<div className='SingleViewContent__content'>
-						{data.body}
-					</div>
-				</div>
-			);
-		});
-
-		return <div className='SingleViewCommments'>{commentList}</div>;
-	};
-
 	const { onBack, post } = props;
 	const { data } = post;
 
@@ -121,8 +72,7 @@ export function Post (props) {
 				</div>
 			</div>
 
-			{/* Turn this into its own component? */}
-			{renderComments()}
+			<PostComments post={data} />
 
 			<div className='SingleViewFooter'>
 				<Button variant='outlined'>
