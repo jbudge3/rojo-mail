@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { fetchData } from '../../utils/http';
 
+import { EmailSenderHeader } from '../EmailSenderHeader';
+
 export const PostComments = props => {
 	const [comments, setComments] = useState(null);
 
@@ -25,13 +27,7 @@ export const PostComments = props => {
 		return (
 			<div className='SingleViewCommment' key={comment.data.id}>
 				<div className='SingleViewContent__Row'>
-					<div className='SingleViewContent__author'>
-						{comment.data.author}
-						<span className='SingleViewContent__subreddit'>
-							{subredditString}
-						</span>
-						<div className='SingleViewContent__toMe'>to me</div>
-					</div>
+					<EmailSenderHeader post={comment.data} />
 				</div>
 
 				<div className='SingleViewContent__content'>
