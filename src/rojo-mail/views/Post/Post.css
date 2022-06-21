@@ -25,7 +25,7 @@
 .SingleViewContent__icon {
 	margin-left: -55px;
 	padding-right: 10px;
-	margin-top: -4px;
+	margin-top: -6px;
 }
 
 .SingleViewContent__title {
@@ -82,7 +82,7 @@
 .SingleViewCommment {
 	border-top: 1px solid #dbdbdb;
 	margin-top: 25px;
-	padding: 25px 25px 0 85px;
+	padding: 25px 25px 0 60px;
 }
 
 .SingleViewFooter {
