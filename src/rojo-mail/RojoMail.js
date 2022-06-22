@@ -54,6 +54,7 @@ export const RojoMail = () => {
 
     return (
         <div className="RojoMail">
+            <div className="text-3x1 font-bold underline">Hellllooo</div>
             <TopBar
                 onSearchChange={_handleSearchInputChange}
                 onSearchSubmit={_handleSearchSubmit}
