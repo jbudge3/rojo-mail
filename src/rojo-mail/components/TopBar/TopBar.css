@@ -1,67 +1,67 @@
 .TopBar {
-	align-items: center;
-	border-bottom: 1px solid #dbdbdb;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	padding: 8px 6px 8px 20px;
-	position: fixed;
-	background-color: #fff;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 6px 8px 20px;
+    position: fixed;
+    background-color: #fff;
 }
 
 .TopBar__left {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .TopBar__headerContainer {
-	display: flex;
-	align-items: center;
-	margin: 0 77px 0 20px;
+    display: flex;
+    align-items: center;
+    margin: 0 77px 0 20px;
 }
 
 .TopBar__header {
-	display: inline-block;
-	margin: 0 0 0 5px;
+    display: inline-block;
+    margin: 0 0 0 5px;
 }
 
 .TopBar__searchContainer {
-	position: relative;
+    position: relative;
 }
 
 .TopBar__searchIcon {
-	position: absolute;
-	top: 15px;
-	left: 10px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
 }
 
 .TopBar__search {
-	background-color: #f1f3f4;
-	height: 46px;
-	width: 600px;
-	font-size: 17px;
-	padding-left: 40px;
-	border-radius: 8px;
-	border: 1px solid #f0f0f0;
+    background-color: #f1f3f4;
+    height: 46px;
+    width: 600px;
+    font-size: 17px;
+    padding-left: 40px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
 }
 
 .TopBar__search:focus {
-	background-color: #fff;
-	border: 1px solid #dbdbdb;
-	outline: none;
-	box-shadow: 2px 2px 2px #f0f0f0;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    box-shadow: 2px 2px 2px #f0f0f0;
 }
 
 .TopBar__search::placeholder {
-	color: #929494;
-	font-size: 15px;
+    color: #929494;
+    font-size: 15px;
 }
 
 .TopBar__right {
-	display: inline-block;
-	margin-right: 40px;
+    display: inline-block;
+    margin-right: 40px;
 }
 
 .TopBar__icon {
-	margin-left: 20px;
+    margin-left: 20px;
 }

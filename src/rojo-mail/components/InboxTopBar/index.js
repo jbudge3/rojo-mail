@@ -1,1 +1,1 @@
-export { InboxTopBar } from './InboxTopBar';
+export { InboxTopBar } from './InboxTopBar'

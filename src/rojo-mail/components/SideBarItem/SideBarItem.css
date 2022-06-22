@@ -1,22 +1,22 @@
 .SideBarItem {
-	display: flex;
-	align-items: center;
-	padding-left: 28px;
-	height: 32px;
-	cursor: pointer;
-	border-radius: 0 20px 20px 0;
-	font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    font-size: 14px;
 }
 
 .SideBarItem:hover {
-	background-color: #dbdbdb;
+    background-color: #dbdbdb;
 }
 
 .SideBarItem__text {
-	margin-left: 14px;
+    margin-left: 14px;
 }
 
 .SideBarItem__count {
-	padding-left: 96px;
-	font-size: 12px;
+    padding-left: 96px;
+    font-size: 12px;
 }

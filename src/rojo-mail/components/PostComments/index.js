@@ -1,1 +1,1 @@
-export { PostComments } from './PostComments.js';
+export { PostComments } from './PostComments.js'

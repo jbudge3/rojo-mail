@@ -1,1 +1,1 @@
-export { SingleItemBar } from './SingleItemBar';
+export { SingleItemBar } from './SingleItemBar'
