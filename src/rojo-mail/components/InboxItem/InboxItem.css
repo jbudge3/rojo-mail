@@ -1,67 +1,67 @@
 .InboxItem {
-	display: flex;
-	flex-direction: column;
-	border-top: 1px solid #dbdbdb;
-	font-weight: 600;
-	font-size: 14px;
-	padding-left: 15px;
-	min-height: 39px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #dbdbdb;
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 15px;
+    min-height: 39px;
 }
 
 .InboxItem--seen {
-	background-color: #f5f7f7;
-	font-weight: normal;
+    background-color: #f5f7f7;
+    font-weight: normal;
 }
 
 .InboxItem:hover {
-	box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-		0 1px 2px 0 rgba(60, 64, 67, 0.5), 0 1px 3px 1px rgba(60, 64, 67, 0.35);
-	z-index: 1;
-	cursor: pointer;
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+        0 1px 2px 0 rgba(60, 64, 67, 0.5), 0 1px 3px 1px rgba(60, 64, 67, 0.35);
+    z-index: 1;
+    cursor: pointer;
 }
 
 .InboxItem__date {
-	flex: 1;
-	text-align: right;
-	padding-right: 10px;
-	font-size: 12px;
-	min-width: 50px;
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    min-width: 50px;
 }
 
 .InboxItem__square {
-	margin-right: 8px;
-	color: #cfd0d0;
+    margin-right: 8px;
+    color: #cfd0d0;
 }
 
 .InboxItem__star {
-	margin-right: 8px;
+    margin-right: 8px;
 }
 
 .InboxItem__title {
-	flex-grow: 1;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 92%;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 92%;
 }
 
 .InboxItem__main {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
 }
 
 .InboxItem__attachments {
-	display: flex;
-	padding-left: 43px;
+    display: flex;
+    padding-left: 43px;
 }
 
 .InboxItem--clicked {
-	background-color: rgba(242, 245, 245, 0.8);
-	font-weight: normal;
+    background-color: rgba(242, 245, 245, 0.8);
+    font-weight: normal;
 }
 
 .InboxItem:last-of-type {
-	border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
 }

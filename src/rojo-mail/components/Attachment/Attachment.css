@@ -1,42 +1,42 @@
 .Attachment__pill {
-	display: flex;
-	align-items: center;
-	border: 1px solid #dbdbdb;
-	border-radius: 40px;
-	cursor: pointer;
-	width: 160px;
-	height: 28px;
-	margin: 0 0 15px 15px;
-	color: #5f6368;
-	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-	font-size: 0.875rem;
-	letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 160px;
+    height: 28px;
+    margin: 0 0 15px 15px;
+    color: #5f6368;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.2px;
 }
 
 .Attachment__fileName {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 .Attachment__icon {
-	fill: #5f6368;
-	padding: 10px;
+    fill: #5f6368;
+    padding: 10px;
 }
 
 .Attachment__image {
-	position: relative;
-	text-decoration: none;
+    position: relative;
+    text-decoration: none;
 }
 
 .Attachment__preview {
-	position: absolute;
-	display: none;
-	z-index: 99;
-	padding: 25px;
-	background-color: white;
-	border: 1px solid black;
-	max-width: 200px;
+    position: absolute;
+    display: none;
+    z-index: 99;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid black;
+    max-width: 200px;
 }
 
 .Attachment__pill:hover .Attachment__preview {
-	display: block;
+    display: block;
 }

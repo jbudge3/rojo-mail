@@ -1,13 +1,13 @@
 .RojoMail__main {
-	display: flex;
+    display: flex;
 }
 
 .RojoMail__content {
-	width: 83%;
-	margin: 71px 0 0 245px;
+    width: 83%;
+    margin: 71px 0 0 245px;
 }
 
 body {
-	font-family: 'Google Sans', Roboto, RobotoDraft, Helvetica, Arial,
-		sans-serif;
+    font-family: 'Google Sans', Roboto, RobotoDraft, Helvetica, Arial,
+        sans-serif;
 }

@@ -1,1 +1,1 @@
-export { EmailSenderHeader } from './EmailSenderHeader.js';
+export { EmailSenderHeader } from './EmailSenderHeader.js'

@@ -1,1 +1,1 @@
-export { EmailButton } from './EmailButton.js';
+export { EmailButton } from './EmailButton.js'
