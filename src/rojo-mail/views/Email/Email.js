@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { SingleItemBar } from '../../components/SingleItemBar'
 import { PostComments } from '../../components/PostComments'
 import { EmailButton } from '../../components/EmailButton'
 import { EmailSenderHeader } from '../../components/EmailSenderHeader'
-
-import { fetchData } from '../../utils/http'
 
 import './Email.css'
 
